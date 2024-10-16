@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --card-bg-color: #fff;
+    --header-bg-color: #3498db;
+    --header-text-color: #fff;
+    --button-bg-color: #3498db;
+    --button-text-color: #fff;
+    --button-hover-bg-color: #2980b9;
+}
+
+body.dark-theme {
+    --bg-color: #1a1a1a;
+    --text-color: #f4f4f4;
+    --card-bg-color: #2c2c2c;
+    --header-bg-color: #2c3e50;
+    --header-text-color: #f4f4f4;
+    --button-bg-color: #3498db;
+    --button-text-color: #f4f4f4;
+    --button-hover-bg-color: #2980b9;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    flex-grow: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#subject-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.subject-card {
+    background-color: var(--card-bg-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 0.3s;
+}
+
+.subject-card h2 {
+    margin-bottom: 0.5rem;
+}
+
+.subject-card button {
+    margin-top: 0.5rem;
+}
+
+button {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+#add-subject-btn {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.5rem;
+}
+
+#theme-toggle {
+    background-color: transparent;
+    border: 1px solid var(--header-text-color);
+    color: var(--header-text-color);
+}
+
+#theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
